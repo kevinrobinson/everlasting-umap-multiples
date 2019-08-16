@@ -52,13 +52,13 @@ async function main() {
     canvas.style.height = height + 'px';
     const ctx = canvas.getContext('2d');
   
-    const r = 5;
+    const r = 2;
     const xd = [-15, 15]; //arbitrary
     const yd = [-15, 15]; //arbitrary
     projections.map((projection, index) => {
       const x = ((projection[0] - xd[0]) / (xd[1] - xd[0])) * width;
       const y = ((projection[1] - yd[0]) / (yd[1] - yd[0])) * height;
-      ctx.strokeStyle = "#FF0000";
+      ctx.strokeStyle = "rgba(255, 0, 0, 0.5)";
       ctx.beginPath();
       ctx.arc(x, y, r, 0, 2 * Math.PI);
       ctx.stroke(); 
