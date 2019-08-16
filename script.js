@@ -30,11 +30,11 @@ async function main() {
   const model = await window.use.load();
   
   console.log('computing embeddings...');
-  const sentences = alternate.labels.map(label => label.sentence).slice(0, 32);
+  const sentences = alternate.labels.map(label => label.sentence).slice(0, 64);
   const embeddingsArray = await embed(model, sentences);
   
   console.log('trying a few seeds...');
-  const seeds = _.range(0, 3);
+  const seeds = _.range(0, 32);
   const iterations = await Promise.all(seeds.map(async seed => {
     return await project(seed, embeddingsArray);
   }));
@@ -44,9 +44,28 @@ async function main() {
   const space = document.querySelector('#canvases');
   iterations.forEach(iteration => {
     const {seed, projections} = iteration;
-    const canvas = 
+    const canvas = document.createElement('canvas');
+    const [width, height] = [200, 200];
+    canvas.width = width;
+    canvas.height = height;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    const ctx = canvas.getContext('2d');
+  
+    const r = 5;
+    const xd = [-15, 15]; //arbitrary
+    const yd = [-15, 15]; //arbitrary
+    projections.map((projection, index) => {
+      const x = ((projection[0] - xd[0]) / (xd[1] - xd[0])) * width;
+      const y = ((projection[1] - yd[0]) / (yd[1] - yd[0])) * height;
+      ctx.strokeStyle = "#FF0000";
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, 2 * Math.PI);
+      ctx.stroke(); 
+    });
+    space.appendChild(canvas);
   })
-  space.appendChild(canvas);
+  
 }
 
 main();
