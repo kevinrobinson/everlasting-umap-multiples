@@ -1,37 +1,5 @@
-Welcome to Glitch
-=================
+# everlasting-umap-multiples
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+small multiples of umap embeddings of some sentences projected into embeddings by the universal sentence encoder
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-
-Your Project
-------------
-
-### ← README.md
-
-That's this file, where you can tell people what your cool website does and how you built it.
-
-### ← index.html
-
-Where you'll write the content of your website. 
-
-### ← style.css
-
-CSS files add styling rules to your content.
-
-### ← script.js
-
-If you're feeling fancy you can add interactivity to your site with JavaScript.
-
-### ← assets
-
-Drag in `assets`, like images or music, to add them to your project
-
-Made by [Glitch](https://glitch.com/)
--------------------
-
-\ ゜o゜)ノ
+![example](https://cdn.glitch.com/2e279979-2c5d-43f3-8194-3cfbe05a586f%2FScreen%20Shot%202019-08-16%20at%208.01.10%20AM.png?v=1565957091168)
